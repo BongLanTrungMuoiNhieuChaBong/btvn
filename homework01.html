@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function calculateFactorial(n){
+
+    }
+
+    // bai 1
+    function calculateFactorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n * calculateFactorial(n - 1);
+    }
+    console.log(calculateFactorial(5));
+    // bai 2
+    function reverseString(str) {
+    return str.split('').reverse().join('');
+    }
+    console.log(reverseString('hello'));
+    // bai 3
+    function translate(countryCode) {
+        let greeting;
+        switch (countryCode.toUpperCase()) {
+            case 'VN':
+                greeting = 'Xin chào';
+                break;
+            case 'EN':
+                greeting = 'Hello';
+                break;
+            case 'FR':
+                greeting = 'Bonjour';
+                break;
+            case 'ES':
+                greeting = 'Hola';
+                break;
+            case 'DE':
+                greeting = 'Hallo';
+                break;
+            default:
+                greeting = 'Mã quốc gia không hợp lệ';
+                break;
+        }
+        return greeting;
+    }
+    console.log(translate('VN')); 
+    console.log(translate('EN')); 
+    console.log(translate('FR'));
+    console.log(translate('ES')); 
+    console.log(translate('DE')); 
+    // bai 4
+    function subString(str) {
+        if (str.length > 15) {
+            return str.slice(0, 10) + '...';
+        }
+        return str;
+    }
+    console.log(subString("bonglantrungmuoinhieuchabong")); 
+</script>
+</html>
