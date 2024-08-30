@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // bai 1
+    // bai 2
+    // function isPrime(n) {
+    // if (n <= 1) return false;
+    // if (n <= 3) return true;
+    // if (n % 2 === 0 || n % 3 === 0) return false;
+    // for (let i = 5; i * i <= n; i += 6) {
+    //     if (n % i === 0 || n % (i + 2) === 0) return false;
+    // }
+    // return true;
+    // }
+
+    // function isPalindrome(n) {
+    //     const str = n.toString();
+    //     return str === str.split('').reverse().join('');
+    // }
+
+    // function dontHaveNum4(n) {
+    //     return !n.toString().includes('4');
+    // }
+
+    // function findSpecialNumbers() {
+    //     const results = [];
+    //     for (let num = 10000; num < 10000000; num++) {
+    //         if (isPrime(num) && isPalindrome(num) && dontHaveNum4(num)) {
+    //             results.push(num);
+    //         }
+    //     }
+    //     return results;
+    // }
+    // const specialNumbers = findSpecialNumbers();
+    // console.log("Các số thoả mãn điều kiện:");
+    // specialNumbers.forEach(number => console.log(number));
+    // bai 3
+    function isPrime(n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n % 2 === 0 || n % 3 === 0) return false;
+    for (let i = 5; i * i <= n; i += 6) {
+        if (n % i === 0 || n % (i + 2) === 0) return false;
+    }
+    return true;
+    }
+
+    function areAllDigitsPrime(n) {
+        const primeDigits = new Set(['2', '3', '5', '7']);
+        const digits = n.toString();
+        for (let digit of digits) {
+            if (!primeDigits.has(digit)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function reverseNumber(n) {
+        return parseInt(n.toString().split('').reverse().join(''), 10);
+    }
+
+    function findSpecialNumbers() {
+        const results = [];
+        for (let num = 1000000; num < 10000000; num++) { 
+            const reversedNum = reverseNumber(num);
+            if (isPrime(num) && areAllDigitsPrime(num) && isPrime(reversedNum)) {
+                results.push(num);
+            }
+        }
+        return results;
+    }
+    const specialNumbers = findSpecialNumbers();
+    console.log("Các số thoả mãn:");
+    specialNumbers.forEach(number => console.log(number));
+    
+    // bai 7
+    function isPrime(n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true; 
+    if (n % 2 === 0 || n % 3 === 0) return false; 
+    for (let i = 5; i * i <= n; i += 6) {
+        if (n % i === 0 || n % (i + 2) === 0) return false;
+    }
+    
+    return true; 
+    }
+    console.log(isPrime(17));
+    console.log(isPrime(25)); 
+
+
+</script>
+</html>
